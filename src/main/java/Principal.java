@@ -53,7 +53,7 @@ public class Principal {
                     ordenarPorTelefono();
                     break;
                 case 6:
-                    System.out.println("¡Hasta luego!");
+                    System.out.println("Gracias por utilizar nuestra aplicacion");
                     break;
                 default:
                     System.out.println("Opción inválida. Por favor, ingrese un número del 1 al 6.");
@@ -65,10 +65,10 @@ public class Principal {
         System.out.println("Ingrese el nombre del contacto:");
         String nombre = scan.nextLine();
         System.out.println("Ingrese el número de teléfono del contacto:");
-        int telefono = scan.nextInt();
+        double telefono = scan.nextDouble();
         scan.nextLine(); 
 
-        Contacto nuevoContacto = new Contacto(nombre, telefono);
+        Contacto nuevoContacto = new Contacto(nombre, (int) telefono);
         listaContactos.add(nuevoContacto);
         System.out.println("Contacto agregado correctamente.");
     }
@@ -109,7 +109,7 @@ public class Principal {
             return;
         }
 
-        Collections.sort(listaContactos, (c1, c2) -> c1.getNombre().compareToIgnoreCase(c2.getNombre()));
+        Collections.sort(listaContactos, (c1, c3) -> c1.getNombre().compareToIgnoreCase(c3.getNombre()));
 
         System.out.println("Lista de Contactos ordenada por nombre:");
         for (int i = 0; i < listaContactos.size(); i++) {
